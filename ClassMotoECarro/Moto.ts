@@ -1,3 +1,5 @@
+import { Automovel } from "./Automovel";
+
 class Moto extends Automovel {
     private passageiros: number;
 
@@ -17,7 +19,7 @@ class Moto extends Automovel {
 
     public ligar() {
         console.log('Pai ta on');
-        console.log('Atributos da motoca: ', super.get_marca, super.get_modelo, super.get_cor, super.get_potencia, this.getPassageiros);
+        console.log('Atributos da motoca: ', super.get_marca(), super.get_modelo(), super.get_cor(), super.get_potencia(), this.getPassageiros());
     }
     public acelerar() {
         console.log('Nannanananana pá');

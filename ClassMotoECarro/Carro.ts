@@ -1,4 +1,4 @@
-import internal from "stream";
+import { Automovel } from "./Automovel";
 
 class Carro extends Automovel {
     private portas: number;

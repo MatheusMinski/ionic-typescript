@@ -44,5 +44,6 @@ class Automovel {
     public set_potencia(_potencia: string): void {
         this._potencia = _potencia;
     }
-
 }
+
+export { Automovel }
