@@ -1,0 +1,23 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <h4>
+        Agenda de Contatos
+      </h4>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group *ngFor="let contato of lista_contatos">
+      <ion-card>
+        <ion-card-content>
+          <ion-item lines="none"><b>Nome:</b> {{ contato.nome }}</ion-item>
+          <ion-item><b>Telefone:</b> {{ contato.telefone }}</ion-item>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-item-group>
+  </ion-list>
+</ion-content>
