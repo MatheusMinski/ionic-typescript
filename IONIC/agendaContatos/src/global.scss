@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,36 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-content {
+  --ion-background-color: var(--ion-color-primary);
+  --ion-text-color: var(--ion-color-secondary-contrast);
+}
+
+ion-toolbar {
+  --background: var(--ion-color-secondary);
+  --ion-text-color: var(--ion-color-secondary-contrast);
+}
+ion-input {
+  --margin: 16px;
+  --color: #0b0c10;
+}
+
+ion-button {
+  --ion-margin: 50px;
+  --color: #0b0c10;
+  --background: #66fcf1;
+}
+
+ion-card {
+  --background: var(--ion-color-primary-contrast);
+}
+ion-item {
+  --color: #0b0c10;
+  --background: var(--ion-color-primary-contrast);
+}
+
+ion-fab-button {
+  --color: #0b0c10;
+  --background: #66fcf1;
+}

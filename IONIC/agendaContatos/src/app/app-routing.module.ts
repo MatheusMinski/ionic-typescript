@@ -4,16 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'home/:nome/:telefone/:sexo/:dataNasc',
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
-    redirectTo: 'cadastrar',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
     path: 'cadastrar',
-    loadChildren: () => import('./cadastrar/cadastrar.module').then(m => m.CadastrarPageModule)
+    loadChildren: () => import('./pages/cadastrar/cadastrar.module').then(m => m.CadastrarPageModule)
   },
 ];
 

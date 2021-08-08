@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Agenda de Contatos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group *ngFor="let contato of _lista_contatos">
+      <ion-card>
+        <ion-card-content>
+          <ion-item lines="none"><b>Nome:</b> {{ contato.getNome() }}</ion-item>
+          <ion-item><b>Telefone:</b> {{ contato.getTelefone() }}</ion-item>
+          <ion-item><b>Sexo:</b> {{ contato.getSexo() }}</ion-item>
+          <ion-item><b>Data de Nascimento:</b> {{ contato.getDataNasc() }}</ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-group>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="irParaCadastrarPage()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

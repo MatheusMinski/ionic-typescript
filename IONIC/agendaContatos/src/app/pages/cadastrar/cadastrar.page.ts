@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Contato } from 'src/app/class/contato';
+import { ContatoService } from 'src/app/services/contato.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -8,9 +11,11 @@ import { AlertController } from '@ionic/angular';
 })
 export class CadastrarPage implements OnInit {
   private _nome: string;
-  private _telefone: string;
+  private _telefone: number;
+  private _sexo: string;
+  private _dataNasc: string;
 
-  constructor(public alertController: AlertController) {
+  constructor(public alertController: AlertController, private _router: Router, private _contatoService: ContatoService) {
 
   }
 
@@ -19,8 +24,12 @@ export class CadastrarPage implements OnInit {
   }
 
   private cadastrar(): void {
-    if (this.validar(this._nome) && this.validar(this._telefone)) {
+    this._dataNasc = this._dataNasc.split("T")[0];
+    if (this.validar(this._nome) && this.validar(this._telefone) && this.validar(this._sexo) && this.validar(this._dataNasc)) {
+      let contato: Contato = new Contato(this._nome, this._telefone, this._sexo, this._dataNasc);
+      this._contatoService.inserir(contato);
       this.presentAlert("Agenda", "Cadastrar", "Cadastro efetuado com sucesso!");
+      this._router.navigate(["/home", this._nome, this._telefone, this._sexo, this._dataNasc])
     } else {
       this.presentAlert("Agenda", "Cadastrar", "Por favor, preencher todos os campos!");
     }
